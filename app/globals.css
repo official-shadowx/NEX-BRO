@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #ff3cac;
+  --accent-soft: #ff7ad9;
+  --bg: #030303;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: #f8fafc;
+}
+
+body {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+  cursor: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 40%, transparent);
+  color: #fff;
+}
+
+.font-display {
+  letter-spacing: -0.04em;
+}
+
+.text-glow-white {
+  text-shadow:
+    0 0 25px rgba(255, 255, 255, 0.8),
+    0 0 48px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+@layer utilities {
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 50%, #222) #050505;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--accent) 55%, #333);
+  border-radius: 999px;
+}
